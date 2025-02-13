@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import examData from "../exam.json";
+import examData from "../../data/exam.json";
 
 export default function Results() {
   const router = useRouter();
@@ -49,6 +49,19 @@ export default function Results() {
   const gradeOutOf100 = (correctCount / totalQuestions) * 100;
   const gradeOutOf30 = (correctCount / totalQuestions) * 30;
 
+  const handleTerminateSession = () => {
+    if (typeof window !== "undefined") {
+      localStorage.removeItem("answers");
+      localStorage.removeItem("timeLeft");
+      localStorage.removeItem("isSessionStarted");
+    }
+  };
+
+  const handleRetakeExam = () => {
+    handleTerminateSession();
+    router.push("/exam");
+  };
+
   return (
     <div className="p-6 text-center bg-gray-100 min-h-screen flex flex-col items-center justify-center">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-2xl">
@@ -88,12 +101,12 @@ export default function Results() {
           <div className="text-lg mb-2 max-h-32">
             <p>Unanswered Questions:</p>
             <div className="font-semibold px-16 py-4 mx-auto">
-              {results.unanswered.join(" , ")}
+              {results.unanswered.join(", ")}
             </div>
           </div>
         </div>
         <button
-          onClick={() => router.push("/exam")}
+          onClick={handleRetakeExam}
           className="mt-8 px-6 py-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-300"
         >
           Retake Exam
