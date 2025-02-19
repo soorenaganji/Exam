@@ -13,19 +13,14 @@ export default function ExamPage() {
   const [answers, setAnswers] = useState({});
   const [timeLeft, setTimeLeft] = useState(50 * 60);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isSessionStarted, setIsSessionStarted] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       const savedAnswers = localStorage.getItem("answers");
       const savedTimeLeft = localStorage.getItem("timeLeft");
-      const savedIsSessionStarted = localStorage.getItem("isSessionStarted");
-
       if (savedAnswers) setAnswers(JSON.parse(savedAnswers));
       if (savedTimeLeft) setTimeLeft(parseInt(savedTimeLeft, 10));
-      if (savedIsSessionStarted)
-        setIsSessionStarted(JSON.parse(savedIsSessionStarted));
     }
   }, []);
 
@@ -41,11 +36,9 @@ export default function ExamPage() {
     if (timeLeft <= 0) {
       handleSubmit();
     }
-    if (isSessionStarted) {
-      const timer = setInterval(() => setTimeLeft((prev) => prev - 1), 1000);
-      return () => clearInterval(timer);
-    }
-  }, [timeLeft, isSessionStarted]);
+    const timer = setInterval(() => setTimeLeft((prev) => prev - 1), 1000);
+    return () => clearInterval(timer);
+  }, [timeLeft]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -59,15 +52,6 @@ export default function ExamPage() {
     }
   }, [timeLeft]);
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      localStorage.setItem(
-        "isSessionStarted",
-        JSON.stringify(isSessionStarted)
-      );
-    }
-  }, [isSessionStarted]);
-
   const handleAnswer = (questionIndex, answer) => {
     setAnswers((prev) => ({ ...prev, [questionIndex]: answer }));
   };
@@ -78,14 +62,12 @@ export default function ExamPage() {
   };
 
   const handleTerminateSession = () => {
-    setIsSessionStarted(false);
     setCurrentQuestion(0);
     setAnswers({});
     setTimeLeft(50 * 60);
     if (typeof window !== "undefined") {
       localStorage.removeItem("answers");
       localStorage.removeItem("timeLeft");
-      localStorage.removeItem("isSessionStarted");
     }
   };
 
@@ -95,21 +77,7 @@ export default function ExamPage() {
 
   return (
     <>
-      <div
-        className={
-          isSessionStarted
-            ? "hidden"
-            : "w-full flex items-start justify-center mt-16"
-        }
-      >
-        <button
-          className="w-36 mt-6 px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition duration-300"
-          onClick={() => setIsSessionStarted(true)}
-        >
-          Start
-        </button>
-      </div>
-      <div className={isSessionStarted ? "flex h-screen" : "hidden"}>
+      <div className={"flex h-screen"}>
         <button
           className="fixed top-4 left-4 z-50 p-2 bg-gray-800 text-white rounded-md md:hidden"
           onClick={toggleSidebar}
@@ -133,44 +101,46 @@ export default function ExamPage() {
           isSidebarOpen={isSidebarOpen}
           toggleSidebar={toggleSidebar}
         />
-        <div className="flex-1 p-6 bg-white shadow-lg rounded-lg flex flex-col mt-16">
+        <div className="flex-1 p-6 bg-white shadow-lg rounded-lg flex flex-col mt-16 max-w-[66%] mx-auto max-h-screen overflow-auto">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-2xl font-bold text-gray-800">
               Question {currentQuestion + 1}
             </h2>
             <Timer timeLeft={timeLeft} />
           </div>
-          <Question
-            question={examData.questions[currentQuestion]}
-            questionIndex={currentQuestion}
-            handleAnswer={handleAnswer}
-            selectedAnswer={answers[currentQuestion]}
-          />
-          <div className="flex justify-between mt-6">
-            {currentQuestion > 0 && (
+          <div className="">
+            <Question
+              question={examData.questions[currentQuestion]}
+              questionIndex={currentQuestion}
+              handleAnswer={handleAnswer}
+              selectedAnswer={answers[currentQuestion]}
+            />
+            <div className="flex justify-between mt-6">
+              {currentQuestion > 0 && (
+                <button
+                  onClick={() =>
+                    setCurrentQuestion((prev) => Math.max(prev - 1, 0))
+                  }
+                  className="px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-600 transition duration-300"
+                >
+                  Previous
+                </button>
+              )}
               <button
                 onClick={() =>
-                  setCurrentQuestion((prev) => Math.max(prev - 1, 0))
+                  setCurrentQuestion((prev) =>
+                    Math.min(prev + 1, examData.questions.length - 1)
+                  )
                 }
-                className="px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-600 transition duration-300"
+                className={
+                  isOnLastQuestion
+                    ? "hidden"
+                    : "px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-300"
+                }
               >
-                Previous
+                Next
               </button>
-            )}
-            <button
-              onClick={() =>
-                setCurrentQuestion((prev) =>
-                  Math.min(prev + 1, examData.questions.length - 1)
-                )
-              }
-              className={
-                isOnLastQuestion
-                  ? "hidden"
-                  : "px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-300"
-              }
-            >
-              Next
-            </button>
+            </div>
           </div>
           <div className="flex justify-between mt-6">
             <button

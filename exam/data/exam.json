@@ -1,548 +1,548 @@
 {
   "questions": [
-    {
-      "question": "In case the propositions P1 and P2 are false (FALSE) and P3 is true (TRUE), what are the truth values of the following compound propositions? 1) NOT P1 OR NOT (P2 AND P3) 2) P1 AND NOT P2 OR P3",
-      "choices": [
-        "FALSE, FALSE",
-        "TRUE, TRUE",
-        "TRUE, FALSE",
-        "FALSE, TRUE"
-      ],
-      "correctAnswer": "TRUE, TRUE"
-    },
-    {
-      "question": "A Random Access Memory (RAM) is characterized by the fact that",
-      "choices": [
-        "None of the other answers are correct",
-        "at each reading, it returns the value of a cell taken at random",
-        "to read the n-th cell, the n-1 cells preceding it must be read",
-        "the access time is independent of the position of the cell in the memory",
-        "the access time depends on the position of the cell in the memory"
-      ],
-      "correctAnswer": "the access time is independent of the position of the cell in the memory"
-    },
-    {
-      "question": "Let a be a stack and b a queue. What output does the following code snippet cause? (a and b are initially empty) a.push(3); a.push(4); a.push(5); a.push(1); b.enqueue(a.top()); b.enqueue(a.top()); b.enqueue(a.top()); b.enqueue(a.top()); while(!b.isEmpty()){ System.out.print((Integer)b.dequeue()+\" \"); }",
-      "choices": [
-        "None of the other answers are correct",
-        "The queue is empty: it does not print anything",
-        "1 1 1 1",
-        "It throws an exception",
-        "It reports an error at compile time"
-      ],
-      "correctAnswer": "1 1 1 1"
-    },
-    {
-      "question": "What is the result of a top() operation performed on an initially empty stack in which the following operations have just been performed? push(1); push(2); pop(); top(); pop(); push(3); top(); push(4); pop(); top();",
-      "choices": [
-        "3",
-        "An exception is thrown because the stack is empty",
-        "2",
-        "1",
-        "4"
-      ],
-      "correctAnswer": "3"
-    },
-    {
-      "question": "Let A be an initially empty stack, the following code snippet what output produces? A.push(15); A.push(4); A.push(1); A.pop(); A.pop(); A.pop(); A.pop(); while(!A.isEmpty()){ System.out.print((Integer)A.pop()+\" \"); }",
-      "choices": [
-        "None of the other answers are correct",
-        "It throws an exception at run time",
-        "4 15",
-        "1",
-        "It generates an infinite loop"
-      ],
-      "correctAnswer": "It throws an exception at run time"
-    },
-    {
-      "question": "In a map implemented with a partially filled, unsorted array containing n (key / value) mappings the get() method has an average-case asymptotic time complexity of :",
-      "choices": [
-        "O(log n)",
-        "O(n)",
-        "O(n log n)",
-        "O(1)",
-        "None of the other answers are correct"
-      ],
-      "correctAnswer": "O(n)"
-    },
-    {
-      "question": "Given a simply linked list, initially empty, which can contain a maximum of 6 integers, what is the status of the list at the end of the following operations? addLast(1); removeFirst(); addFirst(2); addLast(3); removeFirst(); addFirst(4); removeFirst();",
-      "choices": [
-        "The linked list contains {3}",
-        "The linked list contains {1, 4, 2, 3}",
-        "An overflow error occurs in the linked list during the given operations",
-        "The linked list contains {4}",
-        "The linked list is empty"
-      ],
-      "correctAnswer": "The linked list contains {3}"
-    },
-    {
-      "question": "Given an initially empty queue that can contain a maximum of 4 integers, what is the status of the queue at the end of the following operations? enqueue(4); dequeue(); enqueue(4); enqueue(1); dequeue(); enqueue(2); enqueue(1); dequeue(); enqueue(4); dequeue(); dequeue(); enqueue(1); dequeue();",
-      "choices": [
-        "The queue is empty",
-        "An overflow error occurs in the queue during the given operations",
-        "The queue contains {1}",
-        "The queue contains {4, 1, 4, 1}",
-        "The queue contains {4, 1, 2, 1}"
-      ],
-      "correctAnswer": "The queue contains {1}"
-    },
-    {
-      "question": "If A and B are two initially empty queues, what effect does the following code fragment have? A.enqueue(1); B.enqueue(A.dequeue()); A.enqueue(2); A.enqueue(3); B.enqueue(A.dequeue()); A.enqueue(4); B.enqueue(A.dequeue()); while(!B.isEmpty()){ System.out.print((Integer)B.dequeue()+\" \"); }",
-      "choices": [
-        "It prints on standard output the integers 1 2 3",
-        "It throws an exception at run time",
-        "None of the other answers are correct",
-        "It generates an infinite loop",
-        "It reports an error at compile time"
-      ],
-      "correctAnswer": "It prints on standard output the integers 1 2 3"
-    },
-    {
-      "question": "Let A and B be two stacks with A initially not empty and B empty. What does the following algorithm do? Comparable tmp = (Comparable) A.top(); while (!A.isEmpty()) { Comparable tmp2 = (Comparable) A.top(); if (tmp.compareTo(tmp2) > 0) tmp = tmp2; B.push(A.pop()); } while (!B.isEmpty()) { A.push(B.pop()); }",
-      "choices": [
-        "It finds the minimum element in stack A and restores A to its original state",
-        "It finds the maximum element in stack A and restores A to its original state",
-        "It sorts the elements in stack A in ascending order",
-        "It sorts the elements in stack A in descending order",
-        "None of the other answers are correct"
-      ],
-      "correctAnswer": "It finds the minimum element in stack A and restores A to its original state"
-    },
-    {
-      "question": "Which of the following algorithms allows us to invert the contents of queue A using only stack B, initially empty, as auxiliary memory?",
-      "choices": [
-        "while (!A.isEmpty()) {B.push(A.dequeue());A.dequeue();}while (!B.isEmpty()) {A.enqueue(B.top());B.pop();}",
-        "while (!A.isEmpty()) {B.push(A.dequeue());}while (!B.isEmpty()){A.enqueue(B.pop());}",
-        "while (!A.isEmpty()){B.push(A.front());A.enqueue(B.pop());}",
-        "None of the other answers are correct",
-        "It is not possible to flip a queue without using two auxiliary stacks"
-      ],
-      "correctAnswer": "La risposta corretta \u00e8:while (!A.isEmpty()) {B.push(A.dequeue());}while (!B.isEmpty()){A.enqueue(B.pop());}"
-    },
-    {
-      "question": "What is the result of the following boolean expression, knowing that b = true? (a && b) || (!a && !b) != ((!a || !b) && (a || b))",
-      "choices": [
-        "always true",
-        "None of the other answers are correct",
-        "the opposite of the value of a : only if a is false, then the expression is true",
-        "equal to the value of a : only if a is true, then the expression is true",
-        "always false"
-      ],
-      "correctAnswer": "always true"
-    },
-    {
-      "question": "In Java, the float data type allows you to represent numbers of",
-      "choices": [
-        "about nine significant decimal digits",
-        "about seven significant decimal digits",
-        "about fifteen significant decimal digits",
-        "about eleven significant decimal digits",
-        "None of the other answers are correct"
-      ],
-      "correctAnswer": "about seven significant decimal digits"
-    },
-    {
-      "question": "What is the value of the most negative number that can be represented as an int in Java?",
-      "choices": [
-        "-232",
-        "-215",
-        "-231+ 1",
-        "-231",
-        "None of the other answers are correct"
-      ],
-      "correctAnswer": "-231"
-    },
-    {
-      "question": "In Java, to assign the value 1 billion to a variable of the long data type",
-      "choices": [
-        "it is necessary to assign 1000000000$ to the variable",
-        "it is necessary to assign 1000000000L to the variable",
-        "None of the other answers are correct",
-        "just assign 1000000000 to the variable directly",
-        "it is necessary to assign the result of 100000 * 10000 to the variable"
-      ],
-      "correctAnswer": "just assign 1000000000 to the variable directly"
-    },
-    {
-      "question": "According to the Java language specification, how many bytes does an int variable occupy?",
-      "choices": [
-        "1",
-        "4",
-        "None of the other answers are correct",
-        "It depends on the Operating System in use",
-        "2"
-      ],
-      "correctAnswer": "4"
-    },
-    {
-      "question": "In Java, a static method",
-      "choices": [
-        "has an implicit argument only if its return value is different fromvoid",
-        "always has an implicit argument",
-        "None of the other answers are correct",
-        "has an arbitrary number of implicit arguments, as many as are defined in its signature",
-        "has an implicit argument only if its return value isboolean"
-      ],
-      "correctAnswer": "None of the other answers are correct"
-    },
-    {
-      "question": "In Java, garbage collection means",
-      "choices": [
-        "None of the other answers are correct",
-        "an automatic library management mode of the Java Platform API",
-        "stopping the execution of a program by the Java Debugger (JDB) in the event of a program error",
-        "an automatic dynamic memory management mode",
-        "deleting temporary JVM files present in secondary memory (disks)"
-      ],
-      "correctAnswer": "an automatic dynamic memory management mode"
-    },
-    {
-      "question": "A subclass of class X",
-      "choices": [
-        "None of the other answers are correct",
-        "can only invoke the public or private methods of X",
-        "cannot invoke the protected methods of X",
-        "can only invoke the protected or private method of X",
-        "cannot invoke the private methods of X"
-      ],
-      "correctAnswer": "cannot invoke the private methods of X"
-    },
-    {
-      "question": "A subclass of class X",
-      "choices": [
-        "inherits all X methods",
-        "inherits only the X methods defined with thepublicaccess specifier",
-        "implements methods whose signatures X defines only",
-        "None of the other answers are correct",
-        "inherits only the X methods defined with theprotectedaccess specifier"
-      ],
-      "correctAnswer": "inherits all X methods"
-    },
-    {
-      "question": "Within a subclass, to override an inherited method",
-      "choices": [
-        "None of the other answers are correct",
-        "we define a method with the same signature as the method we want to override",
-        "we cannot override a method inherited from a superclass",
-        "it is never advisable to override a method inherited from a superclass",
-        "we define a method with the same name as the method we want to override, but with a different method signature at least in one argument or in the return type"
-      ],
-      "correctAnswer": "we define a method with the same signature as the method we want to override"
-    },
-    {
-      "question": "In Java, a class",
-      "choices": [
-        "can directly implement more interfaces only if the class is an executable class",
-        "can directly extend more classes",
-        "None of the other answers are correct",
-        "cannot directly implement more than one interface",
-        "can directly extend only one class"
-      ],
-      "correctAnswer": "can directly extend only one class"
-    },
-    {
-      "question": "What kind of error does running the following class cause? public class ComplexNumber { public double real; public double imm; public ComplexNumber(double r, double i) { real = r; imm = i; } public static void main(String[] args) { ComplexNumber[] v = new ComplexNumber[10]; for(int i = 0; i < v.length; i++) { v[i].real = 0; v[i].imm = 0; } } }",
-      "choices": [
-        "ArrayIndexOutOfBoundsException",
-        "NullPointerException",
-        "No errors",
-        "None of the other answers are correct",
-        "OverflowException"
-      ],
-      "correctAnswer": "NullPointerException"
-    },
-    {
-      "question": "In a Java class, the constructor",
-      "choices": [
-        "always has the same name as the class in which it is defined",
-        "must always be explicitly defined",
-        "if defined, is always unique",
-        "None of the other answers are correct",
-        "must be explicitly defined as a void method"
-      ],
-      "correctAnswer": "always has the same name as the class in which it is defined"
-    },
-    {
-      "question": "According to the Java language specification, after creating an array of references of the String data type, the individual cells of the array contain",
-      "choices": [
-        "a reference to the empty sting\"\"",
-        "a reference to the \"null\" string",
-        "a random value",
-        "None of the other answers are correct",
-        "the null constant"
-      ],
-      "correctAnswer": "the null constant"
-    },
-    {
-      "question": "In Java, the difference of two variables alpha and beta of the long data type long alpha, beta, zeta; alpha = x; beta = y; zeta = alpha - beta;",
-      "choices": [
-        "None of the other answers are correct",
-        "always calculates the correct value of the subtraction because long integers in Java are expressed in two's complement",
-        "can throw ArithmeticException",
-        "always gives a correct result if alpha and beta are of discordant sign",
-        "always gives a correct result if alpha and beta are both positive or both negative"
-      ],
-      "correctAnswer": "always gives a correct result if alpha and beta are both positive or both negative"
-    },
-    {
-      "question": "By assigning a value of the char type to a reference of type String",
-      "choices": [
-        "The possible loss of precision is reported at compile time",
-        "We make a syntax error reported at compile time",
-        "None of the other answers are correct",
-        "We make a logical error reported at run time",
-        "We do not make ant mistake"
-      ],
-      "correctAnswer": "We make a syntax error reported at compile time"
-    },
-    {
-      "question": "In Java, a constant is",
-      "choices": [
-        "a variable defined with theprivateaccess specifier",
-        "a variable defined with thepublicaccess specifier",
-        "just a static system variable to which no value can be assigned, as Math.E",
-        "a variable defined with thestaticattribute",
-        "None of the other answers are correct"
-      ],
-      "correctAnswer": "None of the other answers are correct"
-    },
-    {
-      "question": "The following method: public static void main(String[] args) { String s; boolean b = s.equals(\"goofy\"); System.out.println(b); }",
-      "choices": [
-        "prints true",
-        "prints false",
-        "reports an error at compile time",
-        "throws an exception at run time",
-        "None of the other answers are correct"
-      ],
-      "correctAnswer": "reports an error at compile time"
-    },
-    {
-      "question": "The Java statement Object obj = 2.2;",
-      "choices": [
-        "is only correct if we are using version 5.0 (or higher) of the Java language, which allows auto-boxing",
-        "is always correct",
-        "None of the other answers are correct",
-        "always report an error at compile time"
-      ],
-      "correctAnswer": "is only correct if we are using version 5.0 (or higher) of the Java language, which allows auto-boxing"
-    },
-    {
-      "question": "When is an instance variable created?",
-      "choices": [
-        "while executing the block in which it is declared",
-        "when declaring the class in which it is contained",
-        "when creating the object in which it is defined",
-        "when it is assigned a value",
-        "None of the other answers are correct"
-      ],
-      "correctAnswer": "when creating the object in which it is defined"
-    },
-    {
-      "question": "The following method: public static boolean evaluate(int a, int b){ if((b != 0) && (a % b == 0)) return true; else return false; }",
-      "choices": [
-        "can throw exceptions",
-        "reports an error at compile time",
-        "always works without errors because the \"lazy\" (or \"shortcircuited\") evaluation mechanism avoids the potential division by zero error",
-        "None of the other answers are correct"
-      ],
-      "correctAnswer": "always works without errors because the \"lazy\" (or \"shortcircuited\") evaluation mechanism avoids the potential division by zero error"
-    },
-    {
-      "question": "The following code: import java.util.Scanner; import java.io.FileReader; import java.io.IOException; public class Test{ public static void main(String[] args) throws IOException{ FileReader r = new FileReader(\"input.txt\"); Scanner c = new Scanner(r); while(c.hasNextLine()){ System.out.println(c.nextLine()); } r.close(); c.close(); } }",
-      "choices": [
-        "If the input.txt file exists, only prints the first line of the file",
-        "always reports an error at run time",
-        "None of the other answers are correct",
-        "reports an error at compile time",
-        "if the input.txt file exists, prints the contents of the file to the standard output"
-      ],
-      "correctAnswer": "if the input.txt file exists, prints the contents of the file to the standard output"
-    },
-    {
-      "question": "What result does the execution of class P produce on the standard output? class P { private static void f(int i, int j) { if(j == 0) return; i--; j--; f(i, j); } public static void main(String[] args) { int a = 3; int b = 1; f(a,b); System.out.println(a + \" \" + b); } }",
-      "choices": [
-        "5 0",
-        "0 2",
-        "None of the other answers are correct",
-        "3 1",
-        "Throws the StackOverflowError"
-      ],
-      "correctAnswer": "3 1"
-    },
-    {
-      "question": "The following code: Object o = Integer.valueOf(5); Integer i = (Integer)o; System.out.println(i);",
-      "choices": [
-        "Reports an error at compile time",
-        "None of the other answers are correct",
-        "Throws an exception other than ClassCastException at run time",
-        "Executes a type cast and prints 5",
-        "Throws ClassCastException at run time"
-      ],
-      "correctAnswer": "Executes a type cast and prints 5"
-    },
-    {
-      "question": "The following code: public static int recursive(int a, int b){ if(b < 0) return a + recursive(a, b - 1); return 0; }",
-      "choices": [
-        "Throws StackOverflowError in case b is positive",
-        "Throws StackOverflowError in case b is negative",
-        "Reports an error at compile time",
-        "Returns the result of multiplying a and b, for a and b negative or equal to zero",
-        "None of the other answers are correct"
-      ],
-      "correctAnswer": "Throws StackOverflowError in case b is negative"
-    },
-    {
-      "question": "In Java, applying the substring (0, str.length () - 1) method to the str object of type String and of non-zero length",
-      "choices": [
-        "a new object of String data type is returned after modifying the object referred to by the str reference variable",
-        "we definitely make a logical error, reported at run time",
-        "a new String object equal to str without the last character is returned and str is not modified",
-        "we modify the object str",
-        "a new String object equal to str is returned, but without modifying str"
-      ],
-      "correctAnswer": "a new String object equal to str without the last character is returned and str is not modified"
-    },
-    {
-      "question": "The lexicographical comparison of two strings requires a number of comparisons between individual characters",
-      "choices": [
-        "equal to the length of the shortest string in the best case",
-        "None of the other answers are correct",
-        "equal to the sum of the lengths of the two strings",
-        "always equal to 1",
-        "equal to the length of the longest string"
-      ],
-      "correctAnswer": "None of the other answers are correct"
-    },
-    {
-      "question": "Given the following 7-bit two's complement integer, what is its decimal representation? 100 0001",
-      "choices": [
-        "127",
-        "None of the other answers are correct",
-        "0",
-        "-63",
-        "-1"
-      ],
-      "correctAnswer": "-63"
-    },
-    {
-      "question": "What is the binary (8-bit, two's complement) representation of the decimal integer 107?",
-      "choices": [
-        "1011 0001",
-        "1100 1111",
-        "0110 1011",
-        "0010 0011",
-        "The given number cannot be represented in 8-bit, two's complement"
-      ],
-      "correctAnswer": "La risposta corretta \u00e8:0110 1011"
-    },
-    {
-      "question": "What is the hexadecimal representation of the decimal integer 651?",
-      "choices": [
-        "28B",
-        "101",
-        "F21",
-        "28A"
-      ],
-      "correctAnswer": "28B"
-    },
-    {
-      "question": "The term \"tail recursion\" means that a recursive method",
-      "choices": [
-        "has a single recursive invocation to itself as its last action",
-        "does not contain the termination condition, causing infinite recursion",
-        "contains two recursive calls to itself made in sequence",
-        "is the last method that is recursively activated by the program",
-        "does not invoke itself directly, but indirectly through other methods"
-      ],
-      "correctAnswer": "has a single recursive invocation to itself as its last action"
-    },
-    {
-      "question": "if it takes 1 second to sort a set of 1,000 unordered elements with the selection sort algorithm, how many seconds will it take to sort 100,000 elements with the same algorithm?",
-      "choices": [
-        "About 100 seconds",
-        "About 10,000 (ten thousend) seconds",
-        "About 1,000 (thousend) seconds",
-        "More than 100.000 (hundred thousend) seconds"
-      ],
-      "correctAnswer": "About 10,000 (ten thousend) seconds"
-    },
-    {
-      "question": "What is the best estimate of the asymptotic time complexity of the binary search algorithm to search in an unordered array containing n elements?",
-      "choices": [
-        "O(1)",
-        "O(n)",
-        "O(log n)",
-        "It is not correct to apply the binary search algorithm to an unsorted array",
-        "None of the other answers are correct"
-      ],
-      "correctAnswer": "It is not correct to apply the binary search algorithm to an unsorted array"
-    },
-    {
-      "question": "What, in the best case, is the asymptotic time complexity of the enqueue() method in a queue implemented with a partially filled array containing n elements?",
-      "choices": [
-        "O(1)",
-        "O(n)",
-        "O(log n)",
-        "O(n log n)",
-        "We cannot implement a queue with an array"
-      ],
-      "correctAnswer": "O(1)"
-    },
-    {
-      "question": "Given two algorithms whose execution times are given by the indicated functions, say which is the best from the point of view of asymptotic time complexity FA0(n)= C+Kn(n-3)+Dn FA1(n)= n(n-1000)+Hn 3",
-      "choices": [
-        "They are equivalent",
-        "Algorithm FA1",
-        "The two algorithms cannot be compared",
-        "Algorithm FA0"
-      ],
-      "correctAnswer": "Algorithm FA0"
-    },
-    {
-      "question": "What is the best estimate of the asymptotic behavior of the following function f(n)? f(n) = n 3 + n log(n+1) + (n-1)/(n+1)",
-      "choices": [
-        "O(1)",
-        "O(n3)",
-        "O(n)",
-        "None of the other answers are correct",
-        "O(n log n)"
-      ],
-      "correctAnswer": "O(n3)"
-    },
-    {
-      "question": "Given the functions f(n) = n g(n) = (n 1/2 )*log(n) h(n) = log(n) sort them in ascending order of asymptotic time complexity",
-      "choices": [
-        "g(n), f(n), h(n)",
-        "f(n), g(n), h(n)",
-        "h(n), f(n), g(n)",
-        "h(n), g(n), f(n)",
-        "None of the other answers are correct"
-      ],
-      "correctAnswer": "La risposta corretta \u00e8:h(n), g(n), f(n)"
-    },
-    {
-      "question": "What is the estimate of the asymptotic time complexity, in the worst case, of the selection sort algorithm, called n the number of elements to be sorted?",
-      "choices": [
-        "None of the other answers are correct",
-        "O(n)",
-        "O(log n)",
-        "O(n2)",
-        "O(n log n)"
-      ],
-      "correctAnswer": "O(n2)"
-    },
-    {
-      "question": "With reference to the asymptotic time complexity of the mergesort algorithm for sorting an array of n elements, which of these statements is true?",
-      "choices": [
-        "It is O(n2) in the worst case",
-        "It is O(n log n) only in the worst case",
-        "None of the other answers are correct",
-        "It is O(1) in the best case",
-        "It is O(log n) only in the average case"
-      ],
-      "correctAnswer": "None of the other answers are correct"
-    }
+      {
+          "question": "In case the propositions P1 and P2 are false (FALSE) and P3 is true (TRUE), what are the truth values of the following compound propositions? 1) NOT P1 OR NOT (P2 AND P3) 2) P1 AND NOT P2 OR P3",
+          "choices": [
+              "FALSE, FALSE",
+              "TRUE, TRUE",
+              "TRUE, FALSE",
+              "FALSE, TRUE"
+          ],
+          "correctAnswer": "TRUE, TRUE"
+      },
+      {
+          "question": "A Random Access Memory (RAM) is characterized by the fact that",
+          "choices": [
+              "None of the other answers are correct",
+              "at each reading, it returns the value of a cell taken at random",
+              "to read the n-th cell, the n-1 cells preceding it must be read",
+              "the access time is independent of the position of the cell in the memory",
+              "the access time depends on the position of the cell in the memory"
+          ],
+          "correctAnswer": "the access time is independent of the position of the cell in the memory"
+      },
+      {
+          "question": "```java\nLet a be a stack and b a queue. What output does the following code snippet cause? (a and b are initially empty) a.push(3); a.push(4); a.push(5); a.push(1); b.enqueue(a.top()); b.enqueue(a.top()); b.enqueue(a.top()); b.enqueue(a.top()); while(!b.isEmpty()){ System.out.print((Integer)b.dequeue()+\" \"); }\n```",
+          "choices": [
+              "None of the other answers are correct",
+              "The queue is empty: it does not print anything",
+              "1 1 1 1",
+              "It throws an exception",
+              "It reports an error at compile time"
+          ],
+          "correctAnswer": "1 1 1 1"
+      },
+      {
+          "question": "```java\nWhat is the result of a top() operation performed on an initially empty stack in which the following operations have just been performed? push(1); push(2); pop(); top(); pop(); push(3); top(); push(4); pop(); top();\n```",
+          "choices": [
+              "3",
+              "An exception is thrown because the stack is empty",
+              "2",
+              "1",
+              "4"
+          ],
+          "correctAnswer": "3"
+      },
+      {
+          "question": "```java\nLet A be an initially empty stack, the following code snippet what output produces? A.push(15); A.push(4); A.push(1); A.pop(); A.pop(); A.pop(); A.pop(); while(!A.isEmpty()){ System.out.print((Integer)A.pop()+\" \"); }\n```",
+          "choices": [
+              "None of the other answers are correct",
+              "It throws an exception at run time",
+              "4 15",
+              "1",
+              "It generates an infinite loop"
+          ],
+          "correctAnswer": "It throws an exception at run time"
+      },
+      {
+          "question": "In a map implemented with a partially filled, unsorted array containing n (key / value) mappings the get() method has an average-case asymptotic time complexity of :",
+          "choices": [
+              "O(log n)",
+              "O(n)",
+              "O(n log n)",
+              "O(1)",
+              "None of the other answers are correct"
+          ],
+          "correctAnswer": "O(n)"
+      },
+      {
+          "question": "Given a simply linked list, initially empty, which can contain a maximum of 6 integers, what is the status of the list at the end of the following operations? addLast(1); removeFirst(); addFirst(2); addLast(3); removeFirst(); addFirst(4); removeFirst();",
+          "choices": [
+              "The linked list contains {3}",
+              "The linked list contains {1, 4, 2, 3}",
+              "An overflow error occurs in the linked list during the given operations",
+              "The linked list contains {4}",
+              "The linked list is empty"
+          ],
+          "correctAnswer": "The linked list contains {3}"
+      },
+      {
+          "question": "```java\nGiven an initially empty queue that can contain a maximum of 4 integers, what is the status of the queue at the end of the following operations? enqueue(4); dequeue(); enqueue(4); enqueue(1); dequeue(); enqueue(2); enqueue(1); dequeue(); enqueue(4); dequeue(); dequeue(); enqueue(1); dequeue();\n```",
+          "choices": [
+              "The queue is empty",
+              "An overflow error occurs in the queue during the given operations",
+              "The queue contains {1}",
+              "The queue contains {4, 1, 4, 1}",
+              "The queue contains {4, 1, 2, 1}"
+          ],
+          "correctAnswer": "The queue contains {1}"
+      },
+      {
+          "question": "```java\nIf A and B are two initially empty queues, what effect does the following code fragment have? A.enqueue(1); B.enqueue(A.dequeue()); A.enqueue(2); A.enqueue(3); B.enqueue(A.dequeue()); A.enqueue(4); B.enqueue(A.dequeue()); while(!B.isEmpty()){ System.out.print((Integer)B.dequeue()+\" \"); }\n```",
+          "choices": [
+              "It prints on standard output the integers 1 2 3",
+              "It throws an exception at run time",
+              "None of the other answers are correct",
+              "It generates an infinite loop",
+              "It reports an error at compile time"
+          ],
+          "correctAnswer": "It prints on standard output the integers 1 2 3"
+      },
+      {
+          "question": "```java\nLet A and B be two stacks with A initially not empty and B empty. What does the following algorithm do? Comparable tmp = (Comparable) A.top(); while (!A.isEmpty()) { Comparable tmp2 = (Comparable) A.top(); if (tmp.compareTo(tmp2) > 0) tmp = tmp2; B.push(A.pop()); } while (!B.isEmpty()) { A.push(B.pop()); }\n```",
+          "choices": [
+              "It finds the minimum element in stack A and restores A to its original state",
+              "It finds the maximum element in stack A and restores A to its original state",
+              "It sorts the elements in stack A in ascending order",
+              "It sorts the elements in stack A in descending order",
+              "None of the other answers are correct"
+          ],
+          "correctAnswer": "It finds the minimum element in stack A and restores A to its original state"
+      },
+      {
+          "question": "Which of the following algorithms allows us to invert the contents of queue A using only stack B, initially empty, as auxiliary memory?",
+          "choices": [
+              "while (!A.isEmpty()) {B.push(A.dequeue());A.dequeue();}while (!B.isEmpty()) {A.enqueue(B.top());B.pop();}",
+              "while (!A.isEmpty()) {B.push(A.dequeue());}while (!B.isEmpty()){A.enqueue(B.pop());}",
+              "while (!A.isEmpty()){B.push(A.front());A.enqueue(B.pop());}",
+              "None of the other answers are correct",
+              "It is not possible to flip a queue without using two auxiliary stacks"
+          ],
+          "correctAnswer": "La risposta corretta \u00e8:while (!A.isEmpty()) {B.push(A.dequeue());}while (!B.isEmpty()){A.enqueue(B.pop());}"
+      },
+      {
+          "question": "What is the result of the following boolean expression, knowing that b = true? (a && b) || (!a && !b) != ((!a || !b) && (a || b))",
+          "choices": [
+              "always true",
+              "None of the other answers are correct",
+              "the opposite of the value of a : only if a is false, then the expression is true",
+              "equal to the value of a : only if a is true, then the expression is true",
+              "always false"
+          ],
+          "correctAnswer": "always true"
+      },
+      {
+          "question": "In Java, the float data type allows you to represent numbers of",
+          "choices": [
+              "about nine significant decimal digits",
+              "about seven significant decimal digits",
+              "about fifteen significant decimal digits",
+              "about eleven significant decimal digits",
+              "None of the other answers are correct"
+          ],
+          "correctAnswer": "about seven significant decimal digits"
+      },
+      {
+          "question": "What is the value of the most negative number that can be represented as an int in Java?",
+          "choices": [
+              "-232",
+              "-215",
+              "-231+ 1",
+              "-231",
+              "None of the other answers are correct"
+          ],
+          "correctAnswer": "-231"
+      },
+      {
+          "question": "In Java, to assign the value 1 billion to a variable of the long data type",
+          "choices": [
+              "it is necessary to assign 1000000000$ to the variable",
+              "it is necessary to assign 1000000000L to the variable",
+              "None of the other answers are correct",
+              "just assign 1000000000 to the variable directly",
+              "it is necessary to assign the result of 100000 * 10000 to the variable"
+          ],
+          "correctAnswer": "just assign 1000000000 to the variable directly"
+      },
+      {
+          "question": "According to the Java language specification, how many bytes does an int variable occupy?",
+          "choices": [
+              "1",
+              "4",
+              "None of the other answers are correct",
+              "It depends on the Operating System in use",
+              "2"
+          ],
+          "correctAnswer": "4"
+      },
+      {
+          "question": "In Java, a static method",
+          "choices": [
+              "has an implicit argument only if its return value is different fromvoid",
+              "always has an implicit argument",
+              "None of the other answers are correct",
+              "has an arbitrary number of implicit arguments, as many as are defined in its signature",
+              "has an implicit argument only if its return value isboolean"
+          ],
+          "correctAnswer": "None of the other answers are correct"
+      },
+      {
+          "question": "In Java, garbage collection means",
+          "choices": [
+              "None of the other answers are correct",
+              "an automatic library management mode of the Java Platform API",
+              "stopping the execution of a program by the Java Debugger (JDB) in the event of a program error",
+              "an automatic dynamic memory management mode",
+              "deleting temporary JVM files present in secondary memory (disks)"
+          ],
+          "correctAnswer": "an automatic dynamic memory management mode"
+      },
+      {
+          "question": "A subclass of class X",
+          "choices": [
+              "None of the other answers are correct",
+              "can only invoke the public or private methods of X",
+              "cannot invoke the protected methods of X",
+              "can only invoke the protected or private method of X",
+              "cannot invoke the private methods of X"
+          ],
+          "correctAnswer": "cannot invoke the private methods of X"
+      },
+      {
+          "question": "A subclass of class X",
+          "choices": [
+              "inherits all X methods",
+              "inherits only the X methods defined with thepublicaccess specifier",
+              "implements methods whose signatures X defines only",
+              "None of the other answers are correct",
+              "inherits only the X methods defined with theprotectedaccess specifier"
+          ],
+          "correctAnswer": "inherits all X methods"
+      },
+      {
+          "question": "Within a subclass, to override an inherited method",
+          "choices": [
+              "None of the other answers are correct",
+              "we define a method with the same signature as the method we want to override",
+              "we cannot override a method inherited from a superclass",
+              "it is never advisable to override a method inherited from a superclass",
+              "we define a method with the same name as the method we want to override, but with a different method signature at least in one argument or in the return type"
+          ],
+          "correctAnswer": "we define a method with the same signature as the method we want to override"
+      },
+      {
+          "question": "In Java, a class",
+          "choices": [
+              "can directly implement more interfaces only if the class is an executable class",
+              "can directly extend more classes",
+              "None of the other answers are correct",
+              "cannot directly implement more than one interface",
+              "can directly extend only one class"
+          ],
+          "correctAnswer": "can directly extend only one class"
+      },
+      {
+          "question": "What kind of error does running the following class cause? public class ComplexNumber { public double real; public double imm; public ComplexNumber(double r, double i) { real = r; imm = i; } public static void main(String[] args) { ComplexNumber[] v = new ComplexNumber[10]; for(int i = 0; i < v.length; i++) { v[i].real = 0; v[i].imm = 0; } } }",
+          "choices": [
+              "ArrayIndexOutOfBoundsException",
+              "NullPointerException",
+              "No errors",
+              "None of the other answers are correct",
+              "OverflowException"
+          ],
+          "correctAnswer": "NullPointerException"
+      },
+      {
+          "question": "In a Java class, the constructor",
+          "choices": [
+              "always has the same name as the class in which it is defined",
+              "must always be explicitly defined",
+              "if defined, is always unique",
+              "None of the other answers are correct",
+              "must be explicitly defined as a void method"
+          ],
+          "correctAnswer": "always has the same name as the class in which it is defined"
+      },
+      {
+          "question": "According to the Java language specification, after creating an array of references of the String data type, the individual cells of the array contain",
+          "choices": [
+              "a reference to the empty sting\"\"",
+              "a reference to the \"null\" string",
+              "a random value",
+              "None of the other answers are correct",
+              "the null constant"
+          ],
+          "correctAnswer": "the null constant"
+      },
+      {
+          "question": "In Java, the difference of two variables alpha and beta of the long data type long alpha, beta, zeta; alpha = x; beta = y; zeta = alpha - beta;",
+          "choices": [
+              "None of the other answers are correct",
+              "always calculates the correct value of the subtraction because long integers in Java are expressed in two's complement",
+              "can throw ArithmeticException",
+              "always gives a correct result if alpha and beta are of discordant sign",
+              "always gives a correct result if alpha and beta are both positive or both negative"
+          ],
+          "correctAnswer": "always gives a correct result if alpha and beta are both positive or both negative"
+      },
+      {
+          "question": "By assigning a value of the char type to a reference of type String",
+          "choices": [
+              "The possible loss of precision is reported at compile time",
+              "We make a syntax error reported at compile time",
+              "None of the other answers are correct",
+              "We make a logical error reported at run time",
+              "We do not make ant mistake"
+          ],
+          "correctAnswer": "We make a syntax error reported at compile time"
+      },
+      {
+          "question": "In Java, a constant is",
+          "choices": [
+              "a variable defined with theprivateaccess specifier",
+              "a variable defined with thepublicaccess specifier",
+              "just a static system variable to which no value can be assigned, as Math.E",
+              "a variable defined with thestaticattribute",
+              "None of the other answers are correct"
+          ],
+          "correctAnswer": "None of the other answers are correct"
+      },
+      {
+          "question": "```java\nThe following method: public static void main(String[] args) { String s; boolean b = s.equals(\"goofy\"); System.out.println(b); }\n```",
+          "choices": [
+              "prints true",
+              "prints false",
+              "reports an error at compile time",
+              "throws an exception at run time",
+              "None of the other answers are correct"
+          ],
+          "correctAnswer": "reports an error at compile time"
+      },
+      {
+          "question": "The Java statement Object obj = 2.2;",
+          "choices": [
+              "is only correct if we are using version 5.0 (or higher) of the Java language, which allows auto-boxing",
+              "is always correct",
+              "None of the other answers are correct",
+              "always report an error at compile time"
+          ],
+          "correctAnswer": "is only correct if we are using version 5.0 (or higher) of the Java language, which allows auto-boxing"
+      },
+      {
+          "question": "When is an instance variable created?",
+          "choices": [
+              "while executing the block in which it is declared",
+              "when declaring the class in which it is contained",
+              "when creating the object in which it is defined",
+              "when it is assigned a value",
+              "None of the other answers are correct"
+          ],
+          "correctAnswer": "when creating the object in which it is defined"
+      },
+      {
+          "question": "The following method: public static boolean evaluate(int a, int b){ if((b != 0) && (a % b == 0)) return true; else return false; }",
+          "choices": [
+              "can throw exceptions",
+              "reports an error at compile time",
+              "always works without errors because the \"lazy\" (or \"shortcircuited\") evaluation mechanism avoids the potential division by zero error",
+              "None of the other answers are correct"
+          ],
+          "correctAnswer": "always works without errors because the \"lazy\" (or \"shortcircuited\") evaluation mechanism avoids the potential division by zero error"
+      },
+      {
+          "question": "```java\nThe following code: import java.util.Scanner; import java.io.FileReader; import java.io.IOException; public class Test{ public static void main(String[] args) throws IOException{ FileReader r = new FileReader(\"input.txt\"); Scanner c = new Scanner(r); while(c.hasNextLine()){ System.out.println(c.nextLine()); } r.close(); c.close(); } }\n```",
+          "choices": [
+              "If the input.txt file exists, only prints the first line of the file",
+              "always reports an error at run time",
+              "None of the other answers are correct",
+              "reports an error at compile time",
+              "if the input.txt file exists, prints the contents of the file to the standard output"
+          ],
+          "correctAnswer": "if the input.txt file exists, prints the contents of the file to the standard output"
+      },
+      {
+          "question": "```java\nWhat result does the execution of class P produce on the standard output? class P { private static void f(int i, int j) { if(j == 0) return; i--; j--; f(i, j); } public static void main(String[] args) { int a = 3; int b = 1; f(a,b); System.out.println(a + \" \" + b); } }\n```",
+          "choices": [
+              "5 0",
+              "0 2",
+              "None of the other answers are correct",
+              "3 1",
+              "Throws the StackOverflowError"
+          ],
+          "correctAnswer": "3 1"
+      },
+      {
+          "question": "```java\nThe following code: Object o = Integer.valueOf(5); Integer i = (Integer)o; System.out.println(i);\n```",
+          "choices": [
+              "Reports an error at compile time",
+              "None of the other answers are correct",
+              "Throws an exception other than ClassCastException at run time",
+              "Executes a type cast and prints 5",
+              "Throws ClassCastException at run time"
+          ],
+          "correctAnswer": "Executes a type cast and prints 5"
+      },
+      {
+          "question": "The following code: public static int recursive(int a, int b){ if(b < 0) return a + recursive(a, b - 1); return 0; }",
+          "choices": [
+              "Throws StackOverflowError in case b is positive",
+              "Throws StackOverflowError in case b is negative",
+              "Reports an error at compile time",
+              "Returns the result of multiplying a and b, for a and b negative or equal to zero",
+              "None of the other answers are correct"
+          ],
+          "correctAnswer": "Throws StackOverflowError in case b is negative"
+      },
+      {
+          "question": "In Java, applying the substring (0, str.length () - 1) method to the str object of type String and of non-zero length",
+          "choices": [
+              "a new object of String data type is returned after modifying the object referred to by the str reference variable",
+              "we definitely make a logical error, reported at run time",
+              "a new String object equal to str without the last character is returned and str is not modified",
+              "we modify the object str",
+              "a new String object equal to str is returned, but without modifying str"
+          ],
+          "correctAnswer": "a new String object equal to str without the last character is returned and str is not modified"
+      },
+      {
+          "question": "The lexicographical comparison of two strings requires a number of comparisons between individual characters",
+          "choices": [
+              "equal to the length of the shortest string in the best case",
+              "None of the other answers are correct",
+              "equal to the sum of the lengths of the two strings",
+              "always equal to 1",
+              "equal to the length of the longest string"
+          ],
+          "correctAnswer": "None of the other answers are correct"
+      },
+      {
+          "question": "Given the following 7-bit two's complement integer, what is its decimal representation? 100 0001",
+          "choices": [
+              "127",
+              "None of the other answers are correct",
+              "0",
+              "-63",
+              "-1"
+          ],
+          "correctAnswer": "-63"
+      },
+      {
+          "question": "What is the binary (8-bit, two's complement) representation of the decimal integer 107?",
+          "choices": [
+              "1011 0001",
+              "1100 1111",
+              "0110 1011",
+              "0010 0011",
+              "The given number cannot be represented in 8-bit, two's complement"
+          ],
+          "correctAnswer": "La risposta corretta \u00e8:0110 1011"
+      },
+      {
+          "question": "What is the hexadecimal representation of the decimal integer 651?",
+          "choices": [
+              "28B",
+              "101",
+              "F21",
+              "28A"
+          ],
+          "correctAnswer": "28B"
+      },
+      {
+          "question": "The term \"tail recursion\" means that a recursive method",
+          "choices": [
+              "has a single recursive invocation to itself as its last action",
+              "does not contain the termination condition, causing infinite recursion",
+              "contains two recursive calls to itself made in sequence",
+              "is the last method that is recursively activated by the program",
+              "does not invoke itself directly, but indirectly through other methods"
+          ],
+          "correctAnswer": "has a single recursive invocation to itself as its last action"
+      },
+      {
+          "question": "if it takes 1 second to sort a set of 1,000 unordered elements with the selection sort algorithm, how many seconds will it take to sort 100,000 elements with the same algorithm?",
+          "choices": [
+              "About 100 seconds",
+              "About 10,000 (ten thousend) seconds",
+              "About 1,000 (thousend) seconds",
+              "More than 100.000 (hundred thousend) seconds"
+          ],
+          "correctAnswer": "About 10,000 (ten thousend) seconds"
+      },
+      {
+          "question": "What is the best estimate of the asymptotic time complexity of the binary search algorithm to search in an unordered array containing n elements?",
+          "choices": [
+              "O(1)",
+              "O(n)",
+              "O(log n)",
+              "It is not correct to apply the binary search algorithm to an unsorted array",
+              "None of the other answers are correct"
+          ],
+          "correctAnswer": "It is not correct to apply the binary search algorithm to an unsorted array"
+      },
+      {
+          "question": "```java\nWhat, in the best case, is the asymptotic time complexity of the enqueue() method in a queue implemented with a partially filled array containing n elements?\n```",
+          "choices": [
+              "O(1)",
+              "O(n)",
+              "O(log n)",
+              "O(n log n)",
+              "We cannot implement a queue with an array"
+          ],
+          "correctAnswer": "O(1)"
+      },
+      {
+          "question": "Given two algorithms whose execution times are given by the indicated functions, say which is the best from the point of view of asymptotic time complexity FA0(n)= C+Kn(n-3)+Dn FA1(n)= n(n-1000)+Hn 3",
+          "choices": [
+              "They are equivalent",
+              "Algorithm FA1",
+              "The two algorithms cannot be compared",
+              "Algorithm FA0"
+          ],
+          "correctAnswer": "Algorithm FA0"
+      },
+      {
+          "question": "What is the best estimate of the asymptotic behavior of the following function f(n)? f(n) = n 3 + n log(n+1) + (n-1)/(n+1)",
+          "choices": [
+              "O(1)",
+              "O(n3)",
+              "O(n)",
+              "None of the other answers are correct",
+              "O(n log n)"
+          ],
+          "correctAnswer": "O(n3)"
+      },
+      {
+          "question": "Given the functions f(n) = n g(n) = (n 1/2 )*log(n) h(n) = log(n) sort them in ascending order of asymptotic time complexity",
+          "choices": [
+              "g(n), f(n), h(n)",
+              "f(n), g(n), h(n)",
+              "h(n), f(n), g(n)",
+              "h(n), g(n), f(n)",
+              "None of the other answers are correct"
+          ],
+          "correctAnswer": "La risposta corretta \u00e8:h(n), g(n), f(n)"
+      },
+      {
+          "question": "What is the estimate of the asymptotic time complexity, in the worst case, of the selection sort algorithm, called n the number of elements to be sorted?",
+          "choices": [
+              "None of the other answers are correct",
+              "O(n)",
+              "O(log n)",
+              "O(n2)",
+              "O(n log n)"
+          ],
+          "correctAnswer": "O(n2)"
+      },
+      {
+          "question": "With reference to the asymptotic time complexity of the mergesort algorithm for sorting an array of n elements, which of these statements is true?",
+          "choices": [
+              "It is O(n2) in the worst case",
+              "It is O(n log n) only in the worst case",
+              "None of the other answers are correct",
+              "It is O(1) in the best case",
+              "It is O(log n) only in the average case"
+          ],
+          "correctAnswer": "None of the other answers are correct"
+      }
   ]
 }
